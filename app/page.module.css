@@ -5,3 +5,8 @@
    padding: 2rem 6rem;
    min-height: 100vh;
 }
+
+.button-container {
+   display: flex;
+   gap: 12px;
+}

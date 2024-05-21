@@ -1,8 +1,12 @@
 :root {
-   --paragraph: #3b3b3b;
-   --black: #050206;
-   --primary: #9a8174;
-   --background: #f2f8fc;
+   --primary: rgba(42, 96, 255, 1);
+   --primary-hover: #1f4bcf;
+   --paragraph: #161616;
+   --border: #e0dede;
+   --background: #f9f8fd;
+   --green: #1dc37e;
+   --orange: #fc836d;
+   --hhRu: #de0000;
 }
 
 @media (prefers-color-scheme: dark) {
