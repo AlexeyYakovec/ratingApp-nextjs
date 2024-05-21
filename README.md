@@ -1,46 +1,31 @@
-# rating-app-nextjs
+This is a Next.js project bootstrapped with create-next-app.
 
-## Table of Contents
+Getting Started
+First, run the development server:
 
--  [About](#about)
--  [Getting Started](#getting_started)
--  [Usage](#usage)
--  [Contributing](../CONTRIBUTING.md)
+npm run dev
 
-## About <a name = "about"></a>
+# or
 
-Write about 1-2 paragraphs describing the purpose of your project.
+yarn dev
 
-## Getting Started <a name = "getting_started"></a>
+# or
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+pnpm dev
+Open http://localhost:3000 with your browser to see the result.
 
-### Prerequisites
+You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
-What things you need to install the software and how to install them.
+This project uses next/font to automatically optimize and load Inter, a custom Google Font.
 
-```
-Give examples
-```
+Learn More
+To learn more about Next.js, take a look at the following resources:
 
-### Installing
+Next.js Documentation - learn about Next.js features and API.
+Learn Next.js - an interactive Next.js tutorial.
+You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
 
-A step by step series of examples that tell you how to get a development env running.
+Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## Usage <a name = "usage"></a>
-
-Add notes about how to use the system.
+Check out our Next.js deployment documentation for more details.
