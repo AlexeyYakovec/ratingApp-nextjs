@@ -20,13 +20,13 @@
 }
 
 .primary {
-   box-shadow: var(--primary) 0px 5px 8px;
+   box-shadow: var(--primary) 0px 2px 8px;
    background-color: var(--primary);
-   color: var(--background);
+   color: var(--white);
 }
 .primary:hover {
    background-color: var(--primary-hover);
-   box-shadow: var(--primary-hover) 0px 5px 8px;
+   box-shadow: var(--primary-hover) 0px 2px 8px;
 }
 
 .ghost {
@@ -37,6 +37,20 @@
 .ghost:hover {
    border: 1px solid var(--primary-hover);
    background-color: var(--primary-hover);
-   box-shadow: var(--primary-hover) 0px 5px 8px;
-   color: var(--background);
+   box-shadow: var(--primary-hover) 0px 2px 8px;
+   color: var(--white);
+}
+
+.arrow {
+   display: inline-block;
+   margin-left: 10px;
+}
+
+.down {
+   transform: rotate(90deg);
+   transition: all 0.2s;
+}
+.primary svg,
+.ghost:hover svg {
+   fill: var(--white);
 }

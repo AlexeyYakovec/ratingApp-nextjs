@@ -1,0 +1,12 @@
+.rating {
+   display: flex;
+   gap: 4px;
+}
+
+.editable {
+   cursor: pointer;
+}
+
+.filled {
+   fill: var(--primary);
+}
