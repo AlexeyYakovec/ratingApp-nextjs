@@ -1,12 +1,32 @@
-.main {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   min-height: 100vh;
+.wrapper {
+   display: grid;
+   grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+   grid-template-areas:
+      ". header header ."
+      ". sidebar body ."
+      "footer footer footer footer";
 }
-
 .body {
    padding: 2rem 6rem;
    position: relative;
    display: flex;
+}
+
+.header {
+   grid-area: header;
+}
+
+.sidebar {
+   grid-area: sidebar;
+}
+
+.main {
+}
+
+.body {
+   grid-area: body;
+}
+
+.footer {
+   grid-area: footer;
 }

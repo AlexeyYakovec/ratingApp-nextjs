@@ -9,7 +9,7 @@ export const Footer = ({
    ...props
 }: FooterProps): JSX.Element => {
    return (
-      <footer className={cn(styles.footer, className)} {...props}>
+      <footer className={cn(className)} {...props}>
          footer
       </footer>
    );

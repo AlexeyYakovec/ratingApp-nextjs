@@ -20,13 +20,12 @@ export default function RootLayout({
    return (
       <html lang="ru">
          <body className={cn(workSans.className)}>
-            <div className={styles.wrapper}>
-               <Header />
-               <Sidebar />
-               <main className={styles.main}>
-                  <div className={styles.body}>{children}</div>
-               </main>
-               <Footer />
+            <div className={styles["wrapper"]}>
+               <Header className={styles["header"]} />
+               <Sidebar className={styles["sidebar"]} />
+               <div className={styles["body"]}>{children}</div>
+
+               <Footer className={styles["footer"]} />
             </div>
          </body>
       </html>

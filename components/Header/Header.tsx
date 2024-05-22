@@ -2,7 +2,7 @@ import React from "react";
 import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
 import cn from "classnames";
-import Link from "next/link";
+import { Htag } from "../Htag/Htag";
 
 export const Header = ({
    children,
@@ -10,8 +10,8 @@ export const Header = ({
    ...props
 }: HeaderProps): JSX.Element => {
    return (
-      <header className={cn(styles.header, className)} {...props}>
-         {children}
+      <header className={cn(className)} {...props}>
+         <Htag tag="h1">Next js</Htag>
       </header>
    );
 };

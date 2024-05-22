@@ -16,8 +16,8 @@ export default function Home(): JSX.Element {
    const [rating, setRating] = useState<number>(4);
 
    return (
-      <>
+      <main>
          <Htag tag="h1">OWL-top</Htag>
-      </>
+      </main>
    );
 }
