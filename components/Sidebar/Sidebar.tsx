@@ -4,9 +4,13 @@ import styles from "./Sidebar.module.css";
 import cn from "classnames";
 import Link from "next/link";
 
-export const Sidebar = ({ children }: SidebarProps): JSX.Element => {
+export const Sidebar = ({
+   children,
+   className,
+   ...props
+}: SidebarProps): JSX.Element => {
    return (
-      <nav className={styles.nav}>
+      <nav className={cn(styles.nav, className)} {...props}>
          <ul>
             <li>
                <Link href={"/"}>Главная</Link>

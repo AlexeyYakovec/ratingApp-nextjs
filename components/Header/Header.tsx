@@ -4,6 +4,14 @@ import styles from "./Header.module.css";
 import cn from "classnames";
 import Link from "next/link";
 
-export const Header = ({ children }: HeaderProps): JSX.Element => {
-   return <div className={styles.header}>{children}</div>;
+export const Header = ({
+   children,
+   className,
+   ...props
+}: HeaderProps): JSX.Element => {
+   return (
+      <header className={cn(styles.header, className)} {...props}>
+         {children}
+      </header>
+   );
 };
