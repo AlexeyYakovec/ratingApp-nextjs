@@ -3,6 +3,7 @@ import { SidebarProps } from "./Sidebar.props";
 import styles from "./Sidebar.module.css";
 import cn from "classnames";
 import Link from "next/link";
+import { Htag } from "../index";
 
 export const Sidebar = ({
    children,
@@ -11,6 +12,7 @@ export const Sidebar = ({
 }: SidebarProps): JSX.Element => {
    return (
       <nav className={cn(styles.nav, className)} {...props}>
+         <Htag tag="h2">Sidebar</Htag>
          <ul>
             <li>
                <Link href={"/"}>Главная</Link>
