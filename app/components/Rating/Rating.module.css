@@ -1,12 +1,11 @@
-.rating {
-   display: flex;
-   gap: 4px;
+.filled svg {
+   fill: var(--primary);
+}
+
+.star svg {
+   margin-right: 5px;
 }
 
 .editable {
    cursor: pointer;
-}
-
-.filled {
-   fill: var(--primary);
 }
