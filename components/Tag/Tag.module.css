@@ -2,20 +2,17 @@
    display: inline-block;
    margin-right: 5px;
    border-radius: 20px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
    cursor: pointer;
 }
 
 .small {
-   padding: 4px 12px;
+   padding: 5px 10px;
    font-size: 12px;
    line-height: 12px;
 }
 
 .medium {
-   padding: 4px 12px;
+   padding: 5px 10px;
    font-size: 14px;
    line-height: 14px;
 }

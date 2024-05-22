@@ -11,7 +11,7 @@ export const Header = ({
 }: HeaderProps): JSX.Element => {
    return (
       <header className={cn(className)} {...props}>
-         <Htag tag="h1">Next js</Htag>
+         <Htag tag="h1">Header</Htag>
       </header>
    );
 };
