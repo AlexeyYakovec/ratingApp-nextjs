@@ -19,13 +19,15 @@ export default function RootLayout({
 }) {
    return (
       <html lang="ru">
-         <body className={cn(workSans.className, styles.body)}>
-            <Sidebar />
-            <Header />
-            <main className={styles.main}>
-               <div className={styles.wrapper}>{children}</div>
-            </main>
-            <Footer />
+         <body className={cn(workSans.className)}>
+            <div className={styles.wrapper}>
+               <Header />
+               <Sidebar />
+               <main className={styles.main}>
+                  <div className={styles.body}>{children}</div>
+               </main>
+               <Footer />
+            </div>
          </body>
       </html>
    );
