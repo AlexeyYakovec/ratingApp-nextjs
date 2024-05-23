@@ -8,14 +8,10 @@ export default async function Menu() {
    });
 
    return (
-      <div>
-         <div>
-            {sidebar.map((item, i) => {
-               return <li key={i}>{item.secondCategory}</li>;
-            })}
-         </div>
-
-         {/* <div>{menu.length}</div> */}
-      </div>
+      <>
+         {sidebar.map((item) => {
+            return <li key={item.secondCategory}>{item.secondCategory}</li>;
+         })}
+      </>
    );
 }

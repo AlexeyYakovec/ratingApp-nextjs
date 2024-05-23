@@ -2,7 +2,7 @@ import React from "react";
 import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
 import cn from "classnames";
-import { Htag } from "../Htag/Htag";
+import { Htag } from "../../components/index";
 
 export const Header = ({
    children,
