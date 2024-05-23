@@ -1,4 +1,3 @@
-"use client";
 import styles from "./page.module.css";
 import {
    Htag,
@@ -11,10 +10,9 @@ import {
    Sidebar,
 } from "../../components/index";
 import { useState, useEffect } from "react";
+import Menu from "./components/menu";
 
-export default function Home(): JSX.Element {
-   const [rating, setRating] = useState<number>(4);
-
+export default async function Home() {
    return (
       <main>
          <Htag tag="h1">OWL-top</Htag>
