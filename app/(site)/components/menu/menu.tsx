@@ -3,7 +3,11 @@ import { getMenu } from "@/api/menu";
 import styles from "./menu.module.css";
 import cn from "classnames";
 
-import { FirstLevelMenuItem, MenuItem } from "@/interfaces/menu.interface";
+import {
+   FirstLevelMenuItem,
+   MenuItem,
+   PageItem,
+} from "@/interfaces/menu.interface";
 import { TopLevelCategory } from "@/interfaces/page.props";
 
 import CoursesIcon from "/helpers/icons/courses.svg";
@@ -25,7 +29,7 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
       id: TopLevelCategory.Services,
    },
    {
-      route: "books",
+      route: "Books",
       name: "Книги",
       icon: <BooksIcon />,
       id: TopLevelCategory.Books,
@@ -39,11 +43,11 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
 ];
 
 export default async function Menu(): Promise<JSX.Element> {
-   const firstCategory = TopLevelCategory.Courses;
+   const firstCategory = TopLevelCategory.Services;
 
    const menu = await getMenu(firstCategory);
    const categories = menu.flatMap((item) => {
-      return item._id;
+      return item;
    });
 
    const buildFirstLevel = (): JSX.Element => {
@@ -61,22 +65,54 @@ export default async function Menu(): Promise<JSX.Element> {
                         <span>{menu.name}</span>
                      </div>
                   </a>
-                  {menu.id == firstCategory && buildSecondLevel()}
+                  {menu.id == firstCategory && buildSecondLevel(menu)}
                </div>
             ))}
          </>
       );
    };
-   const buildSecondLevel = () => {
+
+   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
       return (
          <div>
             {categories.map((category) => {
-               return <div key={category.secondCategory}></div>;
+               return (
+                  <div key={category._id.secondCategory}>
+                     <div className={styles.secondLevel}>
+                        {category._id.secondCategory}
+                     </div>
+                     <div
+                        className={cn(styles.secondLevelBlock, {
+                           [styles.secondLevelBlockOpen]: category.isOpened,
+                        })}
+                     >
+                        {buildThirdLevel(category.pages, menuItem.route)}
+                     </div>
+                  </div>
+               );
             })}
          </div>
       );
    };
-   const buildThirdLevel = () => {};
+   const buildThirdLevel = (pages: PageItem[], route: string) => {
+      return (
+         <>
+            {pages.map((p) => {
+               return (
+                  <a
+                     href={`/${route}/${p.alias}`}
+                     key={p._id}
+                     className={cn(styles.thridLevel, {
+                        [styles.thridLevelActive]: true,
+                     })}
+                  >
+                     {p.category}
+                  </a>
+               );
+            })}
+         </>
+      );
+   };
 
    return (
       <div className={styles.menu}>
