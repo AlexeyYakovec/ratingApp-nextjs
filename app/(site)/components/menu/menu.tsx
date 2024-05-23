@@ -3,7 +3,7 @@ import { getMenu } from "@/api/menu";
 import styles from "./menu.module.css";
 import cn from "classnames";
 
-import { FirstLevelMenuItem } from "@/interfaces/menu.interface";
+import { FirstLevelMenuItem, MenuItem } from "@/interfaces/menu.interface";
 import { TopLevelCategory } from "@/interfaces/page.props";
 
 import CoursesIcon from "/helpers/icons/courses.svg";
@@ -21,38 +21,72 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
    {
       route: "services",
       name: "Сервисы",
-      icon: <CoursesIcon />,
+      icon: <ServicesIcon />,
       id: TopLevelCategory.Services,
    },
    {
       route: "books",
       name: "Книги",
-      icon: <CoursesIcon />,
+      icon: <BooksIcon />,
       id: TopLevelCategory.Books,
    },
    {
       route: "products",
-      name: "продукты",
-      icon: <CoursesIcon />,
+      name: "Продукты",
+      icon: <ProductsIcon />,
       id: TopLevelCategory.Products,
    },
 ];
 
 export default async function Menu(): Promise<JSX.Element> {
-   const menu = await getMenu(0);
-   const sidebar = menu.flatMap((item) => {
+   const firstCategory = TopLevelCategory.Courses;
+
+   const menu = await getMenu(firstCategory);
+   const categories = menu.flatMap((item) => {
       return item._id;
    });
 
-   const buildFirstLevel = () => {};
-   const buildSecondLevel = () => {};
+   const buildFirstLevel = (): JSX.Element => {
+      return (
+         <>
+            {firstLevelMenu.map((menu) => (
+               <div key={menu.route}>
+                  <a href={`/${menu.route}`}>
+                     <div
+                        className={cn(styles.firstLevel, {
+                           [styles.firstLevelActive]: menu.id == firstCategory,
+                        })}
+                     >
+                        {menu.icon}
+                        <span>{menu.name}</span>
+                     </div>
+                  </a>
+                  {menu.id == firstCategory && buildSecondLevel()}
+               </div>
+            ))}
+         </>
+      );
+   };
+   const buildSecondLevel = () => {
+      return (
+         <div>
+            {categories.map((category) => {
+               return <div key={category.secondCategory}></div>;
+            })}
+         </div>
+      );
+   };
    const buildThirdLevel = () => {};
 
    return (
       <div className={styles.menu}>
-         {sidebar.map((item) => {
+         {buildFirstLevel()}
+         {/* {sidebar.map((item) => {
             return <li key={item.secondCategory}>{item.secondCategory}</li>;
-         })}
+         })} */}
       </div>
    );
 }
+
+// export const Menu = async (): Promise<JSX.Element> => {
+// 	const firstCategory = TopLevelCategory.Courses; const menu = await getMenu(firstCategory); const buildFirstLevel = (menu: MenuItem[], firstCategory: TopLevelCategory) => {... }
