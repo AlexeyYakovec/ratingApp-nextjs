@@ -4,6 +4,7 @@ import styles from "./Sidebar.module.css";
 import cn from "classnames";
 import Link from "next/link";
 import { Htag } from "../index";
+import { getMenu } from "@/api/menu";
 
 export const Sidebar = ({
    children,

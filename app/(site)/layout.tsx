@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header, Htag, Footer, Sidebar } from "@/components";
 import styles from "./page.module.css";
 import cn from "classnames";
+import { API } from "./api";
 
 const workSans = Work_Sans({ subsets: ["latin"], weight: "400" });
 
@@ -24,7 +25,6 @@ export default function RootLayout({
                <Header className={styles["header"]} />
                <Sidebar className={styles["sidebar"]} />
                <div className={styles["body"]}>{children}</div>
-
                <Footer className={styles["footer"]} />
             </div>
          </body>
