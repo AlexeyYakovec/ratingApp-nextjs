@@ -1,14 +1,5 @@
 import styles from "./page.module.css";
-import {
-   Htag,
-   Button,
-   Paragraph,
-   Tag,
-   Rating,
-   Header,
-   Footer,
-   Sidebar,
-} from "../../components/index";
+import { Htag, Button, Paragraph, Tag, Rating } from "../../components/index";
 import { useState, useEffect } from "react";
 import Menu from "./components/menu";
 

@@ -26,7 +26,7 @@ export default async function PageProducts({
    }
    return (
       <div style={{ border: "1px solid green" }}>
-         Страница c alias {params.alias}
+         Страница находится в app/site/products/alias {params.alias}
          <Htag tag="h1">{page._id}</Htag>
       </div>
    );

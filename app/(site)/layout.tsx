@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
-import { Header, Htag, Footer, Sidebar } from "@/components";
+import { Header, Footer, Sidebar } from "../../layout/index";
 import styles from "./page.module.css";
 import cn from "classnames";
 
