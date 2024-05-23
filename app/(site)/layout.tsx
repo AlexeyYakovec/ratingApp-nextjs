@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header, Htag, Footer, Sidebar } from "@/components";
 import styles from "./page.module.css";
 import cn from "classnames";
-import { API } from "./api";
 
 const workSans = Work_Sans({ subsets: ["latin"], weight: "400" });
 
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
    description: "Create rating app",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
    children,
 }: {
    children: React.ReactNode;

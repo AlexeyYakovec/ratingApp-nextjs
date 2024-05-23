@@ -4,7 +4,7 @@ import styles from "./Sidebar.module.css";
 import cn from "classnames";
 import Link from "next/link";
 import { Htag } from "../index";
-import { getMenu } from "@/api/menu";
+import Menu from "@/app/(site)/components/menu";
 
 export const Sidebar = ({
    children,
@@ -14,22 +14,8 @@ export const Sidebar = ({
    return (
       <nav className={cn(styles.nav, className)} {...props}>
          <Htag tag="h2">Sidebar</Htag>
-         <ul>
-            <li>
-               <Link href={"/"}>Главная</Link>
-            </li>
-            <li>Курсы</li>
-            <li>Для детей</li>
-            <li>
-               <Link href={"/about"}>О нас</Link>
-            </li>
-            <li>
-               <a href={"/products/typescript"}>Продукт 1</a>
-            </li>
-            <li>
-               <Link href={"/aboutsdfsdf"}>О нас 3</Link>
-            </li>
-         </ul>
+
+         <Menu />
       </nav>
    );
 };

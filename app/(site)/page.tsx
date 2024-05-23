@@ -10,26 +10,12 @@ import {
    Sidebar,
 } from "../../components/index";
 import { useState, useEffect } from "react";
-import { API } from "./api";
-import { MenuItem } from "@/interfaces/menu.interface";
+import Menu from "./components/menu";
 
-async function getMenu(firstCategory: number): Promise<MenuItem[]> {
-   const res = await fetch(API.topPage.find, {
-      method: "POST",
-      body: JSON.stringify({
-         firstCategory,
-      }),
-      headers: new Headers({ "content-type": "application/json" }),
-   });
-   return res.json();
-}
-
-export default async function Home(): Promise<JSX.Element> {
-   const menu = await getMenu(0);
-
+export default async function Home() {
    return (
       <main>
-         {/* <Htag tag="h1">OWL-top</Htag>
+         <Htag tag="h1">OWL-top</Htag>
          <Button appearance="primary">Button</Button>
          <Paragraph size="small">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -39,9 +25,7 @@ export default async function Home(): Promise<JSX.Element> {
          </Paragraph>
          <Tag size="medium" color="red">
             hhru
-         </Tag> */}
-         <div>{JSON.stringify(menu)}</div>
-         <div>{menu.length}</div>
+         </Tag>
       </main>
    );
 }
