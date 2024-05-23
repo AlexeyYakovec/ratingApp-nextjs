@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import { Htag, Button, Paragraph, Tag, Rating } from "../../components/index";
 import { useState, useEffect } from "react";
-import Menu from "./components/menu";
+import Menu from "./components/menu/menu";
 
 export default async function Home() {
    return (
