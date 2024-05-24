@@ -4,7 +4,8 @@
    --paragraph: #3b434e;
    --border: #e0dede;
    --white: #f5f6f8;
-   --background-grey: #b3c0d9;
+   --grey: #999b9e;
+   --grey-dark: #707074;
    --green: #1dc37e;
    --green-light: #c8f8e4;
    --orange: #fc836d;
@@ -12,6 +13,7 @@
 
 a {
    text-decoration: none;
+   color: var(--paragraph);
 }
 
 @media (prefers-color-scheme: dark) {

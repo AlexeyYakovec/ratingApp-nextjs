@@ -1,0 +1,86 @@
+.menu {
+}
+
+.route {
+}
+
+/* firstLevel */
+.firstLevel {
+   display: grid;
+   grid-template-columns: 24px 1fr;
+   gap: 20px;
+   align-items: center;
+   margin-top: 20px;
+
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 25px;
+   transition: 0.25s ease;
+}
+
+.firstLevelActive {
+   color: var(--primary);
+}
+.firstLevelActive svg {
+   fill: var(--primary);
+}
+
+.firstLevelActive,
+.firstLevel:hover {
+   color: var(--primary);
+   fill: var(--primary);
+}
+
+.firstLevel:hover svg {
+   fill: var(--primary);
+   transition: 0.25s ease;
+}
+
+/* secondLevel */
+
+.secondLevel {
+   margin-bottom: 6px;
+   cursor: pointer;
+   text-transform: uppercase;
+
+   color: var(--grey-dark);
+   font-weight: 800;
+   font-size: 12px;
+   line-height: 16px;
+}
+
+.secondBlock {
+   margin-top: 15px;
+   margin-bottom: 15px;
+   margin-left: 12px;
+   padding-left: 32px;
+
+   border-left: 1px solid var(--grey);
+}
+
+.secondLevelBlockOpen:last-child {
+   margin-bottom: 20px;
+}
+
+/* thridLevel */
+
+.thridLevel {
+   margin-bottom: 4px;
+   display: block;
+
+   cursor: pointer;
+
+   color: var(--grey);
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 19px;
+}
+
+.thridLevel:last-child {
+   margin-bottom: 24px;
+}
+
+.thridLevelActive,
+.thridLevel:hover {
+   color: var(--primary);
+}

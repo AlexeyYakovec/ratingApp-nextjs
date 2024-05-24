@@ -54,7 +54,7 @@ export default async function Menu(): Promise<JSX.Element> {
       return (
          <>
             {firstLevelMenu.map((menu) => (
-               <div key={menu.route}>
+               <div key={menu.route} className={styles.route}>
                   <a href={`/${menu.route}`}>
                      <div
                         className={cn(styles.firstLevel, {
@@ -72,9 +72,9 @@ export default async function Menu(): Promise<JSX.Element> {
       );
    };
 
-   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
+   const buildSecondLevel = (menuItem: FirstLevelMenuItem): JSX.Element => {
       return (
-         <div>
+         <div className={styles.secondBlock}>
             {categories.map((category) => {
                return (
                   <div key={category._id.secondCategory}>
@@ -94,16 +94,17 @@ export default async function Menu(): Promise<JSX.Element> {
          </div>
       );
    };
-   const buildThirdLevel = (pages: PageItem[], route: string) => {
+   const buildThirdLevel = (pages: PageItem[], route: string): JSX.Element => {
       return (
          <>
+            {" "}
             {pages.map((p) => {
                return (
                   <a
                      href={`/${route}/${p.alias}`}
                      key={p._id}
                      className={cn(styles.thridLevel, {
-                        [styles.thridLevelActive]: true,
+                        [styles.thridLevelActive]: false,
                      })}
                   >
                      {p.category}
