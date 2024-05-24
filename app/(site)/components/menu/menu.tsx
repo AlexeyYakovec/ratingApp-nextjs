@@ -14,6 +14,7 @@ import CoursesIcon from "/helpers/icons/courses.svg";
 import ServicesIcon from "/helpers/icons/services.svg";
 import BooksIcon from "/helpers/icons/books.svg";
 import ProductsIcon from "/helpers/icons/products.svg";
+import Link from "next/link";
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
    {
@@ -29,7 +30,7 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
       id: TopLevelCategory.Services,
    },
    {
-      route: "Books",
+      route: "books",
       name: "Книги",
       icon: <BooksIcon />,
       id: TopLevelCategory.Books,
@@ -43,7 +44,7 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
 ];
 
 export default async function Menu(): Promise<JSX.Element> {
-   const firstCategory = TopLevelCategory.Services;
+   const firstCategory = TopLevelCategory.Courses;
 
    const menu = await getMenu(firstCategory);
    const categories = menu.flatMap((item) => {
@@ -55,7 +56,7 @@ export default async function Menu(): Promise<JSX.Element> {
          <>
             {firstLevelMenu.map((menu) => (
                <div key={menu.route} className={styles.route}>
-                  <a href={`/${menu.route}`}>
+                  <Link href={`/${menu.route}`}>
                      <div
                         className={cn(styles.firstLevel, {
                            [styles.firstLevelActive]: menu.id == firstCategory,
@@ -64,7 +65,7 @@ export default async function Menu(): Promise<JSX.Element> {
                         {menu.icon}
                         <span>{menu.name}</span>
                      </div>
-                  </a>
+                  </Link>
                   {menu.id == firstCategory && buildSecondLevel(menu)}
                </div>
             ))}
@@ -97,10 +98,9 @@ export default async function Menu(): Promise<JSX.Element> {
    const buildThirdLevel = (pages: PageItem[], route: string): JSX.Element => {
       return (
          <>
-            {" "}
             {pages.map((p) => {
                return (
-                  <a
+                  <Link
                      href={`/${route}/${p.alias}`}
                      key={p._id}
                      className={cn(styles.thridLevel, {
@@ -108,7 +108,7 @@ export default async function Menu(): Promise<JSX.Element> {
                      })}
                   >
                      {p.category}
-                  </a>
+                  </Link>
                );
             })}
          </>
